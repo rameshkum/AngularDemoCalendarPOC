@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="calendarDemoApp" id="top">
+<head>
+    <title>AngularUI Calendar for AngularJS</title>
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="http://angular-ui.github.io/ui-calendar/bower_components/bootstrap-css/css/bootstrap.css" />
+    <link rel="stylesheet" href="http://angular-ui.github.io/ui-calendar/bower_components/fullcalendar/dist/fullcalendar.css">
+    <link rel="stylesheet" href="calendarDemo.css" />
+	
+    <script src="http://angular-ui.github.io/ui-calendar/bower_components/jquery/dist/jquery.js"></script>
+    <script src="http://angular-ui.github.io/ui-calendar/bower_components/angular/angular.js"></script>
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.js"></script>
+    <script src="http://angular-ui.github.io/ui-calendar/bower_components/moment/moment.js"></script>
+    <script src="http://angular-ui.github.io/ui-calendar/bower_components/fullcalendar/dist/fullcalendar.js"></script>
+    <script src="http://angular-ui.github.io/ui-calendar/bower_components/fullcalendar/dist/gcal.js"></script>
+    <script src="http://angular-ui.github.io/ui-calendar/src/calendar.js"></script>
+    <script src="calendarDemo.js"></script>
+	<script src="hello.js"></script>
+</head>
+<body data-spy="scroll">
+	<div class="hero-unit"> 
+		<div class="container">
+			<h1>Inspection Schedule View</h1>
+		</div>
+	</div>
+	<div role="main">
+		<div class="container">
+			<section id="directives-calendar" ng-controller="CalendarCtrl">
+				<div class="well">
+					<div class="row-fluid">
+						<div class="span8">
+							<div class="btn-toolbar">
+								<!-- <p class="pull-right lead">Calendar One View Options</p> -->
+								<div class="btn-group">
+									<button class="btn btn-success" ng-click="changeView('month', 'myCalendar1')">Month</button>
+									<button class="btn btn-success" ng-click="changeView('agendaWeek', 'myCalendar1')">Week</button>
+									<button class="btn btn-success" ng-click="changeView('agendaDay', 'myCalendar1')">Day</button>
+								</div>
+							  </div>
+							<div class="calendar" ng-model="eventSources" calendar="myCalendar1" ui-calendar="uiConfig.calendar"></div>
+						</div>
+					</div>
+				</div>
+				
+				<br>
+				<div id="HTTP_SERVICE_DEMO" ng-show="greeting">
+				<table>
+
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Name</th>
+
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="eList in greeting">
+							<!-- |orderBy:'empId':flase  -->
+							<td>{{eList.id }}</td>
+							<td>{{eList.text}}</td>
+							<td>{{eList.start}}</td>
+							<td>{{eList.end}}</td>
+						</tr>
+
+					</tbody>
+				</table>
+			</div>
+				
+			</section>
+		</div>
+	</div>
+	
+
+</body>
+</html>
